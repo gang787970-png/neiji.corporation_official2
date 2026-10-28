@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>neiji.corporation_official | Валерія Грицаєнко - Преміальна початкова освіта</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neiji: {
+                            900: '#05010a',
+                            800: '#110322',
+                            700: '#1f073d',
+                            600: '#380c70',
+                            500: '#5e14b8',
+                            400: '#8b2ee8',
+                            300: '#bd72f5',
+                            neon: '#a855f7',
+                            cyanNeon: '#00f0ff',
+                            pinkNeon: '#ff007f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #05010a;
+            color: #f3e8ff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .ferrari-glow {
+            text-shadow: 0 0 15px rgba(168, 85, 247, 0.8), 0 0 30px rgba(168, 85, 247, 0.5), 0 0 45px rgba(0, 240, 255, 0.3);
+        }
+
+        .neon-box {
+            box-shadow: 0 0 30px rgba(139, 46, 232, 0.2), inset 0 0 15px rgba(168, 85, 247, 0.15);
+            border: 1px solid rgba(168, 85, 247, 0.35);
+        }
+
+        .neon-box:hover {
+            box-shadow: 0 0 45px rgba(168, 85, 247, 0.55), inset 0 0 25px rgba(0, 240, 255, 0.25);
+            border-color: rgba(0, 240, 255, 0.7);
+        }
+
+        .bg-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .floating-shape {
+            position: absolute;
+            opacity: 0.22;
+            animation: floatShape 18s infinite linear;
+        }
+
+        @keyframes floatShape {
+            0% {
+                transform: translateY(105vh) rotate(0deg) scale(0.8);
+            }
+            50% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg) scale(1.25);
+            }
+        }
+
+        .glass-panel {
+            background: rgba(17, 3, 34, 0.75);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(168, 85, 247, 0.25);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #05010a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #5e14b8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a855f7;
+        }
+    </style>
+</head>
+<body class="relative selection:bg-neiji-neon selection:text-white">
+
+    <!-- Background Floating Neon Shapes -->
+    <div class="bg-shapes" id="bgShapes">
+        <div class="floating-shape text-neiji-neon text-4xl" style="left: 8%; animation-duration: 20s;"><i class="fa-solid fa-star"></i></div>
+        <div class="floating-shape text-neiji-cyanNeon text-3xl" style="left: 22%; animation-duration: 24s;"><i class="fa-solid fa-cloud"></i></div>
+        <div class="floating-shape text-pink-500 text-5xl font-black" style="left: 38%; animation-duration: 15s;">A</div>
+        <div class="floating-shape text-neiji-300 text-4xl" style="left: 52%; animation-duration: 22s;"><i class="fa-solid fa-pencil"></i></div>
+        <div class="floating-shape text-neiji-cyanNeon text-4xl font-black" style="left: 68%; animation-duration: 17s;">1</div>
+        <div class="floating-shape text-neiji-neon text-3xl" style="left: 82%; animation-duration: 26s;"><i class="fa-solid fa-graduation-cap"></i></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-neiji-700/50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo (Ferrari inspired styling) -->
+            <a href="#home" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-neiji-neon via-purple-600 to-neiji-cyanNeon flex items-center justify-center shadow-xl shadow-neiji-neon/40 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-crown text-neiji-900 text-xl font-black"></i>
+                </div>
+                <div>
+                    <span class="font-display font-black text-sm sm:text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-white via-neiji-300 to-neiji-cyanNeon">neiji.corporation_official</span>
+                    <span class="block text-[10px] uppercase tracking-widest text-neiji-cyanNeon font-bold">Valeriia Hrytsaienko • Official Edition</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden xl:flex items-center space-x-6 text-sm font-semibold tracking-wide">
+                <a href="#home" class="hover:text-neiji-cyanNeon transition-colors">Головна</a>
+                <a href="#about" class="hover:text-neiji-cyanNeon transition-colors">Про мене</a>
+                <a href="#psychology" class="hover:text-neiji-cyanNeon transition-colors">Психологія і факти</a>
+                <a href="#computer-science" class="hover:text-neiji-cyanNeon transition-colors">Інформатика</a>
+                <a href="#portfolio" class="hover:text-neiji-cyanNeon transition-colors">Портфоліо</a>
+                <a href="#contacts" class="hover:text-neiji-cyanNeon transition-colors">Контакти</a>
+            </nav>
+
+            <!-- Action button -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="#contacts" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-neiji-600 to-neiji-neon text-white font-bold text-sm shadow-lg shadow-neiji-neon/30 hover:shadow-neiji-neon/60 hover:scale-105 transition-all">
+                    Зв'язатися
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuBtn" class="xl:hidden text-white text-2xl p-2 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden xl:hidden glass-panel border-t border-neiji-700 px-6 py-6 space-y-4">
+            <a href="#home" class="block text-base font-semibold hover:text-neiji-cyanNeon transition-colors mobile-link">Головна</a>
+            <a href="#about" class="block text-base font-semibold hover:text-neiji-cyanNeon transition-colors mobile-link">Про мене</a>
+            <a href="#psychology" class="block text-base font-semibold hover:text-neiji-cyanNeon transition-colors mobile-link">Психологія і факти</a>
+            <a href="#computer-science" class="block text-base font-semibold hover:text-neiji-cyanNeon transition-colors mobile-link">Інформатика</a>
+            <a href="#portfolio" class="block text-base font-semibold hover:text-neiji-cyanNeon transition-colors mobile-link">Портфоліо</a>
+            <a href="#contacts" class="block text-base font-semibold hover:text-neiji-cyanNeon transition-colors mobile-link">Контакти</a>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="relative z-10 pt-20">
+
+        <!-- 1. Hero Section -->
+        <section id="home" class="min-h-[92vh] flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-16">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-panel border border-neiji-neon/40 text-neiji-300 text-xs sm:text-sm font-bold shadow-lg shadow-neiji-neon/20">
+                        <i class="fa-solid fa-star text-neiji-cyanNeon animate-pulse"></i>
+                        <span>Преміальна освіта • neiji.corporation_official</span>
+                    </div>
+                    
+                    <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none">
+                        Швидкість мислення, інновації та любов у <span class="text-transparent bg-clip-text bg-gradient-to-r from-neiji-neon via-purple-300 to-neiji-cyanNeon ferrari-glow">початковій школі</span>
+                    </h1>
+
+                    <!-- Introduction answering Who is a Teacher -->
+                    <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-neiji-neon/30 text-purple-200 text-sm sm:text-base leading-relaxed font-light text-left space-y-4 shadow-xl">
+                        <p>
+                            <strong class="text-white font-semibold">Хто такий вчитель?</strong> Це архітектор дитячих душ і майбутнього суспільства, людина, яка запалює всередині дитини вогник нестримної допитливості, вчить мислити критично, пізнавати світ із захватом та знаходити нестандартні рішення.
+                        </p>
+                        <p>
+                            <strong class="text-white font-semibold">Хто такий вчитель початкових класів?</strong> Це перший і найважливіший наставник після батьків. Це той, хто закладає фундамент знань, допомагає малечі робити перші кроки у великий світ науки, дружби та самовираження, перетворюючи кожен урок на захопливу подорож.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-neiji-600 via-neiji-500 to-neiji-neon text-white font-bold text-base shadow-xl shadow-neiji-neon/40 hover:shadow-neiji-neon/70 hover:scale-105 transition-all text-center">
+                            <i class="fa-solid fa-rocket mr-2"></i> Портфоліо вчителя
+                        </a>
+                        <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-2xl glass-panel text-white font-bold text-base hover:bg-neiji-700/50 hover:border-neiji-cyanNeon/60 transition-all text-center">
+                            Про засновника <i class="fa-solid fa-arrow-right ml-2 text-neiji-cyanNeon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Banner -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md aspect-square rounded-3xl p-1 bg-gradient-to-tr from-neiji-neon via-purple-600 to-neiji-cyanNeon shadow-2xl shadow-neiji-neon/40">
+                        <div class="w-full h-full bg-neiji-900 rounded-[22px] overflow-hidden flex flex-col items-center justify-center p-8 relative group">
+                            <div class="absolute inset-0 bg-gradient-to-b from-neiji-800/80 to-neiji-900 flex flex-col items-center justify-center text-center p-6">
+                                <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-neiji-neon to-neiji-cyanNeon flex items-center justify-center shadow-lg shadow-neiji-neon/50 mb-6 group-hover:rotate-6 transition-transform duration-500">
+                                    <i class="fa-solid fa-graduation-cap text-neiji-900 text-4xl"></i>
+                                </div>
+                                <h3 class="font-display font-extrabold text-2xl text-white mb-2">NEIJI CORPORATION</h3>
+                                <p class="text-sm text-purple-300 font-medium">Офіційний портал Валерії Грицаєнко</p>
+                                <div class="mt-6 flex flex-wrap justify-center gap-2">
+                                    <span class="px-3 py-1 rounded-full bg-neiji-700/60 text-neiji-cyanNeon text-xs font-bold border border-neiji-cyanNeon/30">Кропивницький</span>
+                                    <span class="px-3 py-1 rounded-full bg-neiji-700/60 text-neiji-neon text-xs font-bold border border-neiji-neon/30">Scratch</span>
+                                    <span class="px-3 py-1 rounded-full bg-neiji-700/60 text-pink-400 text-xs font-bold border border-pink-400/30">IT-Освіта</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Section "Про мене" (About Me with User Photo, 17yo, Kropyvnytskyi) -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-neiji-cyanNeon text-xs font-bold uppercase tracking-widest block mb-2">Засновник корпорації</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-black text-white">Про мене</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-neiji-neon to-neiji-cyanNeon mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Real Teacher Photo -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 sm:w-80 aspect-[3/4] rounded-3xl p-1.5 bg-gradient-to-b from-neiji-neon via-purple-500 to-neiji-cyanNeon shadow-2xl shadow-neiji-neon/40 group">
+                        <div class="w-full h-full rounded-[22px] overflow-hidden bg-neiji-800 relative">
+                            <!-- User Photo Attachment -->
+                            <img src="5409146916156678145_119.jpg" 
+                                 alt="Валерія Грицаєнко" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                 onerror="this.src='https://placehold.co/600x800/110322/a855f7?text=Valeriia+Hrytsaienko'">
+                            <!-- Overlay gradient banner -->
+                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neiji-900 via-neiji-900/90 to-transparent p-6 text-center">
+                                <h3 class="font-display font-bold text-xl text-white">Валерія Грицаєнко</h3>
+                                <p class="text-xs text-neiji-cyanNeon font-bold mt-1">Засновник neiji.corporation_official</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bio Text -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="glass-panel rounded-3xl p-8 sm:p-10 neon-box space-y-6">
+                        <h3 class="font-display text-2xl sm:text-3xl font-bold text-white flex items-center">
+                            <i class="fa-solid fa-heart text-pink-500 mr-3 animate-bounce"></i> Вітаю! Я Валерія Грицаєнко
+                        </h3>
+                        <p class="text-purple-200 text-base sm:text-lg leading-relaxed font-light">
+                            Я — засновник <strong class="text-white font-semibold">neiji.corporation_official</strong>, студентка 1 курсу за спеціальністю <strong class="text-white font-semibold">вчитель початкових класів</strong>, а також майбутній вчитель інформатики для початкової школи з міста <strong class="text-white font-semibold">Кропивницький</strong>.
+                        </p>
+                        <p class="text-purple-200 text-base leading-relaxed font-light">
+                            Я щиро люблю дітей і з величезним натхненням та ентузіазмом буду працювати з ними. Для мене освіта — це покликання душі. Я прагну поєднувати найкращі традиції педагогіки з новітніми цифровими технологіями, щоб кожна дитина з радістю йшла до школи та вірила у свої невичерпні можливості.
+                        </p>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-neiji-700">
+                            <div class="text-center p-3 rounded-xl bg-neiji-800/60 border border-neiji-700">
+                                <div class="font-display font-black text-2xl text-neiji-cyanNeon">1 курс</div>
+                                <div class="text-xs text-purple-300 mt-1">Університет</div>
+                            </div>
+                            <div class="text-center p-3 rounded-xl bg-neiji-800/60 border border-neiji-700">
+                                <div class="font-display font-black text-2xl text-neiji-neon">IT & Ed</div>
+                                <div class="text-xs text-purple-300 mt-1">Інформатика</div>
+                            </div>
+                            <div class="col-span-2 sm:col-span-1 text-center p-3 rounded-xl bg-neiji-800/60 border border-neiji-700">
+                                <div class="font-display font-black text-2xl text-pink-400">100%</div>
+                                <div class="text-xs text-purple-300 mt-1">Любові до дітей</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Section "Психологія та цікаві факти" (Psychology & Interesting Facts) -->
+        <section id="psychology" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-neiji-cyanNeon text-xs font-bold uppercase tracking-widest block mb-2">Наукові дослідження</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-black text-white">Психологія і цікаві факти</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-neiji-neon to-neiji-cyanNeon mx-auto mt-4 rounded-full"></div>
+                <p class="text-purple-200 mt-4 text-sm sm:text-base">Корисні статті з дитячої психології, особливості адаптації молодших школярів та секрети педагогіки.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-panel rounded-3xl p-8 neon-box hover:-translate-y-2 transition-transform flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-neiji-600/50 border border-neiji-neon flex items-center justify-center text-neiji-cyanNeon text-2xl mb-6">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-3">Психологія адаптації першокласників</h3>
+                        <p class="text-purple-200 text-sm leading-relaxed font-light">
+                            Перехід від садочка до школи — стрес для дитини. Психологи доводять, що емоційна підтримка вчителя та відсутність порівняння з іншими дітьми знижують тривожність на 50% і підвищують мотивацію до навчання.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-neiji-700 text-xs text-neiji-300 font-semibold flex items-center justify-between">
+                        <span>Стаття з психології</span>
+                        <i class="fa-solid fa-sparkles text-neiji-cyanNeon"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-panel rounded-3xl p-8 neon-box hover:-translate-y-2 transition-transform flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-neiji-600/50 border border-neiji-neon flex items-center justify-center text-pink-400 text-2xl mb-6">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-3">Навчання через ігрову діяльність</h3>
+                        <p class="text-purple-200 text-sm leading-relaxed font-light">
+                            У молодшому шкільному віці головний інструмент пізнання світу — гра. Інтерактивні завдання та цифрові платформи на кшталт LearningApps розвивають увагу та логіку в рази швидше, ніж класичне зазубрювання.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-neiji-700 text-xs text-neiji-300 font-semibold flex items-center justify-between">
+                        <span>Цікавий факт</span>
+                        <i class="fa-solid fa-sparkles text-neiji-cyanNeon"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-panel rounded-3xl p-8 neon-box hover:-translate-y-2 transition-transform flex flex-col justify-between md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-neiji-600/50 border border-neiji-neon flex items-center justify-center text-neiji-300 text-2xl mb-6">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-3">Розвиток емоційного інтелекту</h3>
+                        <p class="text-purple-200 text-sm leading-relaxed font-light">
+                            Дослідження показують, що діти, яких вчитель навчає розпізнавати свої емоції та конструктивно їх виражати, демонструють вищі академічні результати та краще володіють навичками командної роботи.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-neiji-700 text-xs text-neiji-300 font-semibold flex items-center justify-between">
+                        <span>Педагогічна наука</span>
+                        <i class="fa-solid fa-sparkles text-neiji-cyanNeon"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Section "Інформатика в початковій школі" (Computer Science) -->
+        <section id="computer-science" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="glass-panel rounded-3xl p-8 sm:p-14 neon-box border border-neiji-cyanNeon/30 relative overflow-hidden">
+                <div class="absolute right-0 top-0 w-96 h-96 bg-neiji-cyanNeon/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                    <div class="lg:col-span-7 space-y-6">
+                        <span class="text-neiji-cyanNeon text-xs font-bold uppercase tracking-widest block">Цифрові технології</span>
+                        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">Вчитель інформатики для початкових класів</h2>
+                        <p class="text-purple-200 text-base leading-relaxed font-light">
+                            Сучасна початкова школа неможлива без інформатики. Як майбутній вчитель інформатики для малечі, я переконана, що комп'ютерні технології мають розвивати логічне мислення, просторову уяву та креативність.
+                        </p>
+                        <p class="text-purple-200 text-base leading-relaxed font-light">
+                            За допомогою візуального середовища <strong class="text-white font-semibold">Scratch</strong> діти створюють перші алгоритми, анімації та ігри власними руками, перетворюючись із пасивних споживачів контенту на творців цифрового світу.
+                        </p>
+                        <div class="flex flex-wrap gap-3 pt-2">
+                            <span class="px-4 py-2 rounded-xl bg-neiji-800 text-neiji-cyanNeon text-xs font-semibold border border-neiji-cyanNeon/30"><i class="fa-solid fa-code mr-2"></i>Алгоритми у Scratch</span>
+                            <span class="px-4 py-2 rounded-xl bg-neiji-800 text-neiji-neon text-xs font-semibold border border-neiji-neon/30"><i class="fa-solid fa-shapes mr-2"></i>Векторна графіка</span>
+                            <span class="px-4 py-2 rounded-xl bg-neiji-800 text-pink-400 text-xs font-semibold border border-pink-400/30"><i class="fa-solid fa-shield-halved mr-2"></i>Безпечний інтернет</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="w-full max-w-sm aspect-video sm:aspect-square rounded-2xl bg-gradient-to-br from-neiji-700 to-neiji-900 p-6 flex flex-col justify-center items-center text-center border border-neiji-cyanNeon/40 shadow-xl shadow-neiji-cyanNeon/20">
+                            <div class="w-20 h-20 rounded-2xl bg-neiji-cyanNeon/20 text-neiji-cyanNeon flex items-center justify-center text-3xl mb-4 animate-bounce">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h4 class="font-display font-bold text-white text-xl mb-2">Scratch & LearningApps</h4>
+                            <p class="text-xs text-purple-300">Інтерактивні інструменти нового покоління</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Section "Портфоліо" (Portfolio & Projects with Google Drive Links) -->
+        <section id="portfolio" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-neiji-cyanNeon text-xs font-bold uppercase tracking-widest block mb-2">Офіційне сховище матеріалів</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-black text-white">Портфоліо вчителя початкових класів</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-neiji-neon to-neiji-cyanNeon mx-auto mt-4 rounded-full"></div>
+                <p class="text-purple-200 mt-4 text-sm sm:text-base">Презентації, постери, векторна графіка та інтерактивні вправи для роботи з учнями.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Item 1: Presentations -->
+                <div class="glass-panel rounded-3xl p-8 neon-box flex flex-col justify-between group hover:border-neiji-cyanNeon transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-600 to-neiji-neon flex items-center justify-center text-white text-2xl shadow-lg shadow-neiji-neon/40">
+                                <i class="fa-solid fa-file-powerpoint"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-neiji-700/80 text-neiji-cyanNeon text-xs font-bold border border-neiji-cyanNeon/30">Google Диск</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-white mb-3">Презентації</h3>
+                        <p class="text-purple-200 text-sm leading-relaxed font-light">
+                            Яскраві, інтерактивні та методично розроблені презентації для проведення цікавих уроків у початковій школі.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-neiji-700/60 flex items-center justify-between">
+                        <span class="text-xs text-purple-300 font-medium"><i class="fa-solid fa-folder-open mr-1"></i> Відкрити папку</span>
+                        <a href="https://drive.google.com/drive/folders/1Rdh54Ag-2dFyZ5KXzSzleHp3z7tdPiZm?usp=drive_link" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-neiji-600 to-neiji-neon text-white font-bold text-xs shadow-md shadow-neiji-neon/30 hover:scale-105 transition-transform flex items-center">
+                            Переглянути <i class="fa-solid fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 2: Posters -->
+                <div class="glass-panel rounded-3xl p-8 neon-box flex flex-col justify-between group hover:border-neiji-cyanNeon transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-600 to-neiji-neon flex items-center justify-center text-white text-2xl shadow-lg shadow-pink-500/40">
+                                <i class="fa-solid fa-image"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-neiji-700/80 text-pink-400 text-xs font-bold border border-pink-400/30">Google Диск</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-white mb-3">Постери</h3>
+                        <p class="text-purple-200 text-sm leading-relaxed font-light">
+                            Навчальні дидактичні плакати та яскраві постери для оформлення класного простору та підтримки уваги учнів.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-neiji-700/60 flex items-center justify-between">
+                        <span class="text-xs text-purple-300 font-medium"><i class="fa-solid fa-folder-open mr-1"></i> Відкрити папку</span>
+                        <a href="https://drive.google.com/drive/folders/10RKo1s79wxwGRqH1p1-OPFLcG1tChudS?usp=drive_link" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-neiji-600 to-neiji-neon text-white font-bold text-xs shadow-md shadow-neiji-neon/30 hover:scale-105 transition-transform flex items-center">
+                            Переглянути <i class="fa-solid fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 3: Vector Graphics Scratch -->
+                <div class="glass-panel rounded-3xl p-8 neon-box flex flex-col justify-between group hover:border-neiji-cyanNeon transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-600 to-neiji-cyanNeon flex items-center justify-center text-neiji-900 text-2xl shadow-lg shadow-neiji-cyanNeon/40 font-bold">
+                                <i class="fa-solid fa-shapes"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-neiji-700/80 text-neiji-cyanNeon text-xs font-bold border border-neiji-cyanNeon/30">Google Диск</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-white mb-3">Векторна графіка у Скретч</h3>
+                        <p class="text-purple-200 text-sm leading-relaxed font-light">
+                            Авторські проєкти та векторні малюнки у середовищі Scratch для розвитку цифрової творчості школярів.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-neiji-700/60 flex items-center justify-between">
+                        <span class="text-xs text-purple-300 font-medium"><i class="fa-solid fa-folder-open mr-1"></i> Відкрити папку</span>
+                        <a href="https://drive.google.com/drive/folders/1G9VBXMUQcr1lC_5YKOMvPf-4SWaHMArx?usp=drive_link" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-neiji-600 to-neiji-neon text-white font-bold text-xs shadow-md shadow-neiji-neon/30 hover:scale-105 transition-transform flex items-center">
+                            Переглянути <i class="fa-solid fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 4: LearningApps Interactive Exercises -->
+                <div class="glass-panel rounded-3xl p-8 neon-box flex flex-col justify-between group hover:border-neiji-cyanNeon transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white text-2xl shadow-lg shadow-orange-500/40">
+                                <i class="fa-solid fa-puzzle-piece"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-neiji-700/80 text-orange-400 text-xs font-bold border border-orange-400/30">LearningApps</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-white mb-3">Інтерактивні вправи</h3>
+                        <p class="text-purple-200 text-sm leading-relaxed font-light">
+                            Мультимедійні навчальні блоки на платформі LearningApps.org для закріплення матеріалу у цікавій ігровій формі.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-neiji-700/60 flex items-center justify-between">
+                        <span class="text-xs text-purple-300 font-medium"><i class="fa-solid fa-globe mr-1"></i> Платформа</span>
+                        <a href="https://learningapps.org" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-neiji-600 to-neiji-neon text-white font-bold text-xs shadow-md shadow-neiji-neon/30 hover:scale-105 transition-transform flex items-center">
+                            LearningApps <i class="fa-solid fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Contacts Section -->
+        <section id="contacts" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="glass-panel rounded-3xl p-8 sm:p-14 neon-box relative overflow-hidden">
+                <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-neiji-neon/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="text-center max-w-2xl mx-auto mb-12 relative z-10">
+                    <span class="text-neiji-cyanNeon text-xs font-bold uppercase tracking-widest block mb-2">Зв'яжіться зі мною</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">Контакти та соціальні мережі</h2>
+                    <p class="text-purple-200 mt-3 text-sm">Відкрита до нових освітніх ідей, співпраці та професійного спілкування!</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10">
+                    <!-- Telegram -->
+                    <a href="https://t.me/valerkas_k" target="_blank" rel="noopener noreferrer" class="glass-panel rounded-2xl p-6 flex flex-col items-center text-center hover:border-neiji-cyanNeon hover:scale-105 transition-all group">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-500/20 text-neiji-cyanNeon flex items-center justify-center text-2xl mb-4 group-hover:bg-blue-500/40 transition-colors">
+                            <i class="fa-brands fa-telegram"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-white text-lg mb-1">Telegram</h4>
+                        <span class="text-xs text-neiji-300 font-medium">@valerkas_k</span>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:valriagritsaenko4@gmail.com" class="glass-panel rounded-2xl p-6 flex flex-col items-center text-center hover:border-neiji-cyanNeon hover:scale-105 transition-all group">
+                        <div class="w-14 h-14 rounded-2xl bg-purple-500/20 text-neiji-neon flex items-center justify-center text-2xl mb-4 group-hover:bg-purple-500/40 transition-colors">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-white text-lg mb-1">Електронна пошта</h4>
+                        <span class="text-xs text-neiji-300 font-medium break-all">valriagritsaenko4@gmail.com</span>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/sunfade_x" target="_blank" rel="noopener noreferrer" class="glass-panel rounded-2xl p-6 flex flex-col items-center text-center hover:border-neiji-cyanNeon hover:scale-105 transition-all group">
+                        <div class="w-14 h-14 rounded-2xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-2xl mb-4 group-hover:bg-pink-500/40 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-white text-lg mb-1">Instagram</h4>
+                        <span class="text-xs text-neiji-300 font-medium">@sunfade_x</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neiji-800 bg-neiji-900/90 py-8 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <span class="font-display font-bold text-white text-sm">neiji.corporation_official</span>
+                <p class="text-xs text-purple-400 mt-1">© 2026 Всі права захищені. Засновник: Валерія Грицаєнко.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-purple-300 text-sm font-medium">
+                <a href="#home" class="hover:text-neiji-cyanNeon transition-colors">Головна</a>
+                <a href="#about" class="hover:text-neiji-cyanNeon transition-colors">Про мене</a>
+                <a href="#portfolio" class="hover:text-neiji-cyanNeon transition-colors">Портфоліо</a>
+                <a href="#contacts" class="hover:text-neiji-cyanNeon transition-colors">Контакти</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Dynamic floating neon shapes generator
+        window.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('bgShapes');
+            const icons = [
+                '<i class="fa-solid fa-star"></i>',
+                '<i class="fa-solid fa-cloud"></i>',
+                '<i class="fa-solid fa-pencil"></i>',
+                '<i class="fa-solid fa-graduation-cap"></i>',
+                '<i class="fa-solid fa-laptop-code"></i>',
+                '<i class="fa-solid fa-heart"></i>',
+                '<i class="fa-solid fa-shapes"></i>'
+            ];
+            const letters = ['A', 'B', 'C', '1', '2', '3', '★', '⚡'];
+
+            for (let i = 0; i < 14; i++) {
+                const div = document.createElement('div');
+                div.className = 'floating-shape';
+                
+                const isIcon = Math.random() > 0.4;
+                if (isIcon) {
+                    div.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+                } else {
+                    div.innerHTML = letters[Math.floor(Math.random() * letters.length)];
+                }
+
+                const leftPos = Math.random() * 95;
+                const duration = 15 + Math.random() * 15;
+                const delay = Math.random() * 10;
+                const size = 1 + Math.random() * 1.5;
+
+                div.style.left = `${leftPos}%`;
+                div.style.animationDuration = `${duration}s`;
+                div.style.animationDelay = `${delay}s`;
+                div.style.fontSize = `${size}rem`;
+
+                const colors = ['#a855f7', '#00f0ff', '#ff007f', '#bd72f5', '#8b2ee8'];
+                div.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+                container.appendChild(div);
+            }
+        });
+    </script>
+</body>
+</html>
